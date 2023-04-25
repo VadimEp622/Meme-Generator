@@ -7,6 +7,9 @@
     padding-inline-end: 50px;
 }
 
+.filter-tools {
+    height: calc(var(--header-height)/2);
+}
 .filter-tools a:hover{
     background-color: gray;
 }

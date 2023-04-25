@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="#">
 </head>
 
-<body class="main-layout">
+<body class="main-layout" onload="onInit()">
 
     <!-- HEADER -->
     <section class="header-container main-layout full">
@@ -24,19 +24,27 @@
         </header>
     </section>
 
-    <!-- FILTER -->
-    <section class="filter-tools flex">
-        <label for="search">Search:</label>
-        <input id="search" type="search">
-        
-        <section class="filter-tags flex align-center">
-            <span><a href="#">demo tag 1</a></span>
-            <span><a href="#">demo tag 2</a></span>
-        </section>
-    </section>
-
     <!-- MAIN -->
-    <main></main>
+    <main class="">
+        <!-- FILTER -->
+        <section class="filter-tools flex">
+            <label for="search">Search:</label>
+            <input id="search" type="search">
+            <section class="filter-tags flex align-center">
+                <span><a href="#">demo tag 1</a></span>
+                <span><a href="#">demo tag 2</a></span>
+            </section>
+        </section>
+        <!-- CARDS -->
+        <section class="meme-gallery card-layout">
+            <article class="meme-card">
+                <img src="imgs/meme-imgs (various aspect ratios)/003.jpg">
+            </article>
+            <article class="meme-card">
+                <img src="imgs/meme-imgs (various aspect ratios)/Oprah-You-Get-A.jpg">
+            </article>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <section class="footer-container main-layout full">
@@ -45,8 +53,12 @@
         </footer>
     </section>
 
-    <!-- <script src="js/utils.js"></script> -->
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/gallery.service.js"></script>
+    <!-- <script src="js/services/editor.service.js"></script> -->
+    <script src="js/gallery.controller.js"></script>
+    <!-- <script src="js/editor.controller.js"></script> -->
 </body>
 
 </html>
