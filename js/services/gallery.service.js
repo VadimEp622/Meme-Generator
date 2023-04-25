@@ -1,31 +1,32 @@
 'use strict'
 
+// shift+alt+i
 const MEMES = [
-    '003.jpg',
-    '004.jpg',
-    '005.jpg',
-    '006.jpg',
-    '12.jpg',
-    '19.jpg',
-    '2.jpg',
-    '5.jpg',
-    '8.jpg',
-    '9.jpg',
-    'Ancient-Aliens.jpg',
-    'drevil.jpg',
-    'img11.jpg',
-    'img12.jpg',
-    'img2.jpg',
-    'img4.jpg',
-    'img5.jpg',
-    'img6.jpg',
-    'leo.jpg',
-    'meme1.jpg',
-    'One-Does-Not-Simply.jpg',
-    'Oprah-You-Get-A.jpg',
-    'patrick.jpg',
-    'putin.jpg',
-    'X-Everywhere.jpg'
+    {fileName:'003.jpg', tags:['funny','akward']},
+    {fileName:'004.jpg', tags:['cute','dog']},
+    {fileName:'005.jpg', tags:['cute','dog','baby']},
+    {fileName:'006.jpg', tags:['cute','cat']},
+    {fileName:'12.jpg', tags:['akward']},
+    {fileName:'19.jpg', tags:['angry']},
+    {fileName:'2.jpg', tags:['happy','dancing']},
+    {fileName:'5.jpg', tags:['baby','happy']},
+    {fileName:'8.jpg', tags:['akward','happy']},
+    {fileName:'9.jpg', tags:['baby','funny','happy']},
+    {fileName:'Ancient-Aliens.jpg', tags:['akward','funny']},
+    {fileName:'drevil.jpg', tags:['akward','funny']},
+    {fileName:'img11.jpg', tags:['','']},
+    {fileName:'img12.jpg', tags:['','']},
+    {fileName:'img2.jpg', tags:['','']},
+    {fileName:'img4.jpg', tags:['','']},
+    {fileName:'img5.jpg', tags:['','']},
+    {fileName:'img6.jpg', tags:['','']},
+    {fileName:'leo.jpg', tags:['','']},
+    {fileName:'meme1.jpg', tags:['','']},
+    {fileName:'One-Does-Not-Simply.jpg', tags:['','']},
+    {fileName:'Oprah-You-Get-A.jpg', tags:['','']},
+    {fileName:'patrick.jpg', tags:['','']},
+    {fileName:'putin.jpg', tags:['','']},
+    {fileName:'X-Everywhere.jpg', tags:['','']},
 ]
 
 
@@ -46,14 +47,18 @@ function getMemes() {
 //----------PRIVATE FUNCTIONS----------//
 
 function _createMemes() {
-    let memes = MEMES.map(meme => meme)
+    let memes = MEMES.map(meme => 
+        _createMeme(meme.fileName,meme.tags)
+        )
     // console.log('memes', memes)
-    
+
     return memes
 }
 
-function _createMeme(fileName) {
+function _createMeme(fileName,tags) {
     return {
-        fileName
+        id:makeId(),
+        tags,
+        fileName,
     }
 }
