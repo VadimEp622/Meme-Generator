@@ -1,0 +1,23 @@
+/* MAIN layout */
+.main-layout {
+    display: grid;
+    /* grid-template-columns: minmax(260px, 1fr) minmax(auto, 980px) minmax(260px, 1fr); */
+    grid-template-columns: minmax(5.769vw, 1fr) minmax(auto, 1400px) minmax(5.769vw, 1fr);
+}
+
+.main-layout>*:not(.full) {
+    /* background-color: blue; */
+    grid-column: 2;
+    border: 1px solid gray;
+}
+
+/* .main-layout>*:not(.full, .main-header >*) {
+    border: 1px solid var(--clr3);
+    border-top: 0px;
+} */
+
+.main-layout>.full {
+    /* background-color: green; */
+    grid-column: 1/-1;
+}
+

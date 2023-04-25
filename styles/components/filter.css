@@ -1,0 +1,12 @@
+
+.filter-tags>*:first-child{
+    padding-inline-start: 50px;
+}
+
+.filter-tags>* {
+    padding-inline-end: 50px;
+}
+
+.filter-tools a:hover{
+    background-color: gray;
+}
