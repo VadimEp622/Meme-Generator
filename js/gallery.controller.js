@@ -12,13 +12,13 @@ function renderMemes() {
         `
         <article id="${meme.id}" class="meme-card" onmousedown="onMemeClick(this.id)">
             <section class="image-container">
-                <img src="imgs/meme-imgs (various aspect ratios)/${meme.fileName}">
+                <img src="imgs/meme-imgs/${meme.fileName}">
                 <section class="modal">${meme.tags.join(', ')}</section>
             </section>
         </article>
         `
     ).join('')
-    // console.log('strHtml', strHtml)
+    console.log('strHtml', strHtml)
 
     document.querySelector('.meme-gallery').innerHTML = strHtml
 }
