@@ -8,8 +8,11 @@ header {
     align-items: center;
 }
 
-header .navigate>* {
+header .navigate>*:not(:last-child) {
     padding-inline-end: 100px;
+}
+header .navigate>*:last-child{
+    padding-inline-end: 50px;
 }
 
 header a:hover{
