@@ -17,5 +17,5 @@ function renderMemes() {
     ).join('')
     console.log('strHtml', strHtml)
 
-    // document.querySelector('.meme-gallery').innerHTML = strHtml
+    document.querySelector('.meme-gallery').innerHTML = strHtml
 }

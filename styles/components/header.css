@@ -1,19 +1,20 @@
 .header-container {
     background-color: orange;
-    height: var(--header-height);
+    /* height: var(--header-height); */
     /* align-items: center; */
 }
 
 header {
     align-items: center;
+    height: var(--header-height);
+    padding-inline: 50px;
 }
+
 
 header .navigate>*:not(:last-child) {
     padding-inline-end: 100px;
 }
-header .navigate>*:last-child{
-    padding-inline-end: 50px;
-}
+
 
 header a:hover{
     background-color: rgb(232, 151, 0);
