@@ -11,7 +11,7 @@ function onInitCanvas(imageId) {
 
 
     onImgInput(imageId)
-    
+
     resizeCanvas()
 }
 
@@ -20,12 +20,18 @@ function onImgInput(imageId) {
 
 }
 
+// DONE: find a way to put the actual, from the folder, image height and width, into new Image()
+//maybe 'imgElement.naturalWidth' , or 'imgElement.naturalHeight' might work
 function loadNewImgElement(imageId, onImageReady) {
     const imgFileName = getMemeById(imageId).fileName
     // console.log('imgFileName', imgFileName)
     let img = new Image()
-    // console.log('img', img)
+    console.log('img', img)
     img.src = `imgs/meme-imgs/${imgFileName}`
+    console.log('img.naturalWidth', img.naturalWidth)
+    console.log('img.naturalHeight', img.naturalHeight)
+    gElCanvas.width = img.naturalWidth
+    gElCanvas.height = img.naturalHeight
     img.onload = () => onImageReady(img)
 }
 
@@ -35,7 +41,7 @@ function renderImg(img) {
 }
 
 function resizeCanvas() {
-    const elContainer = document.querySelector('canvas')
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetHeight
+    // const elContainer = document.querySelector('canvas')
+    // gElCanvas.width = elContainer.offsetWidth
+    // gElCanvas.height = elContainer.offsetHeight
 }
