@@ -12,7 +12,7 @@
     justify-content: space-between;
 }
 
-.flex.space-evenly{
+.flex.space-evenly,.flex-row{
     justify-content: space-evenly;
 }
 

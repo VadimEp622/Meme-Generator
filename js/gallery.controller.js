@@ -30,8 +30,8 @@ function renderMemes() {
 
 function onMemeClick(imageId) {
     console.log('imageId', imageId)
-
     changePageTo('page-meme-editor')
+
     onInitCanvas(imageId)
 
 }
