@@ -1,0 +1,3 @@
+.logo {
+    height: calc(var(--header-height)/2);
+}

@@ -1,9 +1,17 @@
-:root{
+:root {
     /* size vars */
-    --header-height:50px;
+    --header-height: 50px;
+    --img-size: 200px;
+    --btn-padding:5px;
 
 
 
 
     /* Color Palette */
+    --clr0: white;
+    --clr1: black;
+    --clr2: orange;
+    --clr3: rgb(194, 193, 193);
+    --clr4: rgb(222, 222, 222);
+
 }

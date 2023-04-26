@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Title</title>
+    <title>Meme Generator</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" href="#">
 </head>
@@ -14,10 +14,12 @@
 
 <body class="main-layout" onload="onInit()">
 
+
     <!-- HEADER -->
     <section class="header-container main-layout full">
         <header class="flex space-between ">
-            <section class="logo">MEME GENERATOR</section>
+            <img class="logo" src="imgs/LOGO/LOGO.png">
+
             <nav class="navigate">
                 <span><a href="#" data-display-page="page-main-gallery"
                         onmousedown="onPageChange(this.dataset.displayPage)">Gallery</a></span>
@@ -29,10 +31,12 @@
         </header>
     </section>
 
+
     <!-- MAIN -->
     <main class="">
 
-        <section class="page-main-gallery" >
+        <!-- PAGE-MAIN-GALLERY -->
+        <section class="page-main-gallery">
             <!-- FILTER -->
             <section class="filter-tools flex">
                 <label for="search">Search:</label>
@@ -59,22 +63,33 @@
             </section>
         </section>
 
+        <!-- PAGE-MEME-EDITOR -->
         <section class="page-meme-editor" hidden>
             <section class="meme-editor-tool-container flex align-center space-evenly">
                 <canvas height="400" width="400"></canvas>
-                <section class="meme-editor-tool">Meme editor here</section>
+                <section class="meme-editor-tool">
+                    <label>Meme editor here</label>
+                    <button><img src="imgs/ICONS/add.png"></button>
+                    <button><img src="imgs/ICONS/align-to-left.png"></button>
+                    <!-- <button><img src="imgs/ICONS/"></button> -->
+                    <!-- <button><img src="imgs/ICONS/"></button> -->
+                    <!-- <button><img src="imgs/ICONS/"></button> -->
+                </section>
             </section>
         </section>
 
-
+        <!-- PAGE-SAVED-MEMES -->
         <section class="page-saved-memes" hidden>
             <section> Saved memes here</section>
         </section>
 
+        <!-- PAGE-ABOUT -->
         <section class="page-about" hidden>
             <section> About here</section>
         </section>
+
     </main>
+
 
     <!-- FOOTER -->
     <section class="footer-container main-layout full">
@@ -82,6 +97,7 @@
             <section>© - Site made by - Vlad</section>
         </footer>
     </section>
+
 
     <script src="js/services/util.service.js"></script>
     <script src="js/services/storage.service.js"></script>
