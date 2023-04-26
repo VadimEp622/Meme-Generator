@@ -11,6 +11,7 @@
 </head>
 
 <!-- TODO: variable-ise constant values and color palettes -->
+
 <body class="main-layout" onload="onInit()">
 
     <!-- HEADER -->
@@ -18,38 +19,60 @@
         <header class="flex space-between ">
             <section class="logo">MEME GENERATOR</section>
             <nav class="navigate">
-                <span><a href="#">Gallery</a></span>
-                <span><a href="#">Saved Memes</a></span>
-                <span><a href="#">About</a></span>
+                <span><a href="#" data-display-page="page-main-gallery"
+                        onmousedown="onPageChange(this.dataset.displayPage)">Gallery</a></span>
+                <span><a href="#" data-display-page="page-saved-memes"
+                        onmousedown="onPageChange(this.dataset.displayPage)">Saved Memes</a></span>
+                <span><a href="#" data-display-page="page-about"
+                        onmousedown="onPageChange(this.dataset.displayPage)">About</a></span>
             </nav>
         </header>
     </section>
 
     <!-- MAIN -->
     <main class="">
-        <!-- FILTER -->
-        <section class="filter-tools flex">
-            <label for="search">Search:</label>
-            <input id="search" type="search">
-            <section class="filter-tags flex align-center">
-                <span><a href="#">demo tag 1</a></span>
-                <span><a href="#">demo tag 2</a></span>
+
+        <section class="page-main-gallery" hidden>
+            <!-- FILTER -->
+            <section class="filter-tools flex">
+                <label for="search">Search:</label>
+                <input id="search" type="search">
+                <nav class="filter-tags flex align-center">
+                    <span><a href="#">demo tag 1</a></span>
+                    <span><a href="#">demo tag 2</a></span>
+                </nav>
+            </section>
+            <!-- CARDS -->
+            <section class="meme-gallery card-layout">
+                <!-- <article class="meme-card" onmousedown="onMemeClick(this.id)">
+                    <section class="image-container">
+                        <img src="imgs/meme-imgs (various aspect ratios)/003.jpg">
+                        <section class="modal">random tags</section>
+                    </section>
+                </article>
+                <article class="meme-card">
+                    <section class="image-container">
+                        <img src="imgs/meme-imgs (various aspect ratios)/Oprah-You-Get-A.jpg">
+                        <section class="modal">random tags</section>
+                    </section>
+                </article> -->
             </section>
         </section>
-        <!-- CARDS -->
-        <section class="meme-gallery card-layout">
-            <!-- <article class="meme-card" onmousedown="onMemeClick(this.id)">
-                <section class="image-container">
-                    <img src="imgs/meme-imgs (various aspect ratios)/003.jpg">
-                    <section class="modal">random tags</section>
-                </section>
-            </article>
-            <article class="meme-card">
-                <section class="image-container">
-                    <img src="imgs/meme-imgs (various aspect ratios)/Oprah-You-Get-A.jpg">
-                    <section class="modal">random tags</section>
-                </section>
-            </article> -->
+
+        <section class="page-meme-editor " >
+            <section class="meme-editor-tool-container flex space-evenly align-center ">
+                <canvas height="400" width="400"></canvas>
+                <section class="meme-editor-tool">Meme editor here</section>
+            </section>
+        </section>
+
+
+        <section class="page-saved-memes" hidden>
+            <section> Saved memes here</section>
+        </section>
+
+        <section class="page-about" hidden>
+            <section> About here</section>
         </section>
     </main>
 
@@ -64,8 +87,8 @@
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
     <!-- <script src="js/services/editor.service.js"></script> -->
+    <script src="js/editor.controller.js"></script>
     <script src="js/gallery.controller.js"></script>
-    <!-- <script src="js/editor.controller.js"></script> -->
 </body>
 
 </html>

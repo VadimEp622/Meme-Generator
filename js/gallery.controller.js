@@ -1,5 +1,9 @@
 'use strict'
 // TODO EX: add tags to memes
+
+const PAGE_CLASSES = ['page-main-gallery', 'page-meme-editor', 'page-saved-memes', 'page-about']
+
+
 function onInit() {
     renderMemes()
 }
@@ -18,14 +22,30 @@ function renderMemes() {
         </article>
         `
     ).join('')
-    console.log('strHtml', strHtml)
+    // console.log('strHtml', strHtml)
 
     document.querySelector('.meme-gallery').innerHTML = strHtml
 }
 
-//TODO: make onMemeClick recieve id, 
-// change main into canvas Edit, 
-// and add image to canvas using id
-function onMemeClick(id){
-    console.log('id', id)
+
+function onMemeClick(imageId) {
+    console.log('imageId', imageId)
+
+    changePageTo('page-meme-editor')
+    onInitCanvas(imageId)
+
+}
+
+
+
+function onPageChange(pageName) {
+    console.log('pageName', pageName)
+    changePageTo(pageName)
+}
+
+function changePageTo(toPage) {
+    PAGE_CLASSES.forEach(pageClass => {
+        document.querySelector(`.${pageClass}`).hidden = (pageClass === toPage) ? false : true
+    })
+
 }

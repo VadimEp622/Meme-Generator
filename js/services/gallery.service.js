@@ -40,6 +40,9 @@ function getMemes() {
 }
 
 
+function getMemeById(id){
+    return gMemes.find(meme=>meme.id===id)
+}
 
 
 
