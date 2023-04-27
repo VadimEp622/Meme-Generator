@@ -2,8 +2,15 @@ canvas {
     border: 1px solid black;
 }
 
+.canvas-container{
+    /* width: 30vw; */
+    /* height: 10vh; */
+}
 .meme-editor-tool-container {
     height: 100%;
+    column-gap: 50px;
+    padding-inline: 50px;   
+    /* max-width: 50vw; */
 }
 
 .page-meme-editor {

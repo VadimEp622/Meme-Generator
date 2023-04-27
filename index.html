@@ -66,7 +66,9 @@
         <!-- PAGE-MEME-EDITOR -->
         <section class="page-meme-editor" hidden>
             <section class="meme-editor-tool-container flex align-center space-evenly">
-                <canvas height="400" width="400"></canvas>
+                <section class="canvas-container">
+                    <canvas height="400" width="400"></canvas>
+                </section>
                 <section class="meme-editor-tool">
                     <label>Meme editor here</label>
 
@@ -81,8 +83,8 @@
                         <button onmousedown="onTextAlign('left')"><img src="imgs/ICONS/align-to-left.png"></button>
                         <button onmousedown="onTextAlign('center')"><img src="imgs/ICONS/center-text-alignment.png"></button>
                         <button onmousedown="onTextAlign('right')"><img src="imgs/ICONS/align-to-right.png"></button>
-                        <button><img src="imgs/ICONS/decrease font - icon.png"></button>
-                        <button><img src="imgs/ICONS/increase font - icon.png"></button>
+                        <button onmousedown="onFontSizeDecrease()"><img src="imgs/ICONS/decrease font - icon.png"></button>
+                        <button onmousedown="onFontSizeIncrease()"><img src="imgs/ICONS/increase font - icon.png"></button>
                         <button><img src="imgs/ICONS/text stroke.png"></button>
                         <button><img src="imgs/ICONS/paint-board-and-brush.png"></button>
                     </article>

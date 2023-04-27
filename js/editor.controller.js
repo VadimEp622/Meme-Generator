@@ -27,15 +27,14 @@ function onInitCanvas(imageId) {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
+    // resizeCanvas()
 
     onImgInput(imageId)
 
-    resizeCanvas()
 }
 
 function onImgInput(imageId) {
     loadNewImgElement(imageId, renderLoadedImg)
-
 }
 
 // DONE: find a way to put the actual, from the folder, image height and width, into new Image()
@@ -44,10 +43,10 @@ function loadNewImgElement(imageId, onImageReady) {
     const imgFileName = getMemeById(imageId).fileName
     // console.log('imgFileName', imgFileName)
     let img = new Image()
-    console.log('img', img)
+    // console.log('img', img)
     img.src = `imgs/meme-imgs/${imgFileName}`
-    console.log('img.naturalWidth', img.naturalWidth)
-    console.log('img.naturalHeight', img.naturalHeight)
+    // console.log('img.naturalWidth', img.naturalWidth)
+    // console.log('img.naturalHeight', img.naturalHeight)
 
     gElCanvas.width = img.naturalWidth
     gElCanvas.height = img.naturalHeight
@@ -62,6 +61,7 @@ function renderLoadedImg(img) {
     gImg = img
     createCanvasTxtBox()
     renderImg(img)
+    // resizeCanvas()
 }
 
 function renderImg(img) {
@@ -72,11 +72,29 @@ function renderImg(img) {
 
 
 function resizeCanvas() {
-    // const elContainer = document.querySelector('canvas')
-    // gElCanvas.width = elContainer.offsetWidth
-    // gElCanvas.height = elContainer.offsetHeight
+    const elContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elContainer.offsetWidth
+    gElCanvas.height = elContainer.offsetHeight
+
+    // console.log('elContainer.offsetWidth', elContainer.offsetWidth)
+    // console.log('elContainer.offsetHeight', elContainer.offsetHeight)
+
+    // gElCanvas.width = elContainer.clientWidth
+    // console.log('elContainer.clientWidth', elContainer.clientWidth)
+    // console.log('elContainer.clientWidth', elContainer.screenX)
 }
 
+function onFontSizeDecrease(){
+    decreaseFont()
+    const txtBox = getTxtBox()
+    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
+}
+
+function onFontSizeIncrease(){
+    increaseFont()
+    const txtBox = getTxtBox()
+    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
+}
 
 function onTextInput(value) {
     // console.log('value', value)
@@ -86,16 +104,15 @@ function onTextInput(value) {
     const txtBox = getTxtBox()
     // console.log('txtBox', txtBox)
 
-    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.textAlign)
+    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
 }
 
 
 function onTextAlign(textAlign) {
     console.log('textAlign', textAlign)
     setTxtBoxTextAlign(textAlign)
-
     const txtBox = getTxtBox()
-    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.textAlign)
+    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
 }
 
 function onAddTxtBox() {
@@ -104,15 +121,15 @@ function onAddTxtBox() {
 }
 
 
-function drawText(text, x, y, textAlign) {
-    console.log('text, x, y, textAlign', text, x, y, textAlign)
+function drawText(text, x, y, fontSize, textAlign) {
+    console.log('text, x, y, fontSize, textAlign --', text, x, y, fontSize, textAlign)
 
     renderImg(gImg)
 
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'brown'
     gCtx.fillStyle = 'black'
-    gCtx.font = '40px Arial'
+    gCtx.font = `${fontSize}px Arial`
     gCtx.textAlign = textAlign
     gCtx.textBaseline = 'middle'
 

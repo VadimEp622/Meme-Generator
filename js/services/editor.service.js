@@ -38,6 +38,15 @@ function setTxtBoxTextAlign(textAlign) {
     gTxtBoxes[currIdx].textXpos = _getTxtXposByTextAlign(textAlign)
     gCurrTextAlign = textAlign
 }
+function decreaseFont() {
+    const currIdx = _getTxtBoxIdx()
+    if (gTxtBoxes[currIdx].fontSize < 20) return
+    gTxtBoxes[currIdx].fontSize -= 2
+}
+function increaseFont() {
+    const currIdx = _getTxtBoxIdx()
+    gTxtBoxes[currIdx].fontSize += 2
+}
 
 
 // CREATE //
@@ -68,6 +77,7 @@ function _createTxtBox() {
         textAlign: 'center',
         textXpos: null,
         textYpos: null,
+        fontSize: 40,
     }
 }
 
