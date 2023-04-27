@@ -77,10 +77,10 @@
 
                     <article class="text-editor-container">
                         <label>Text Edit Icons</label>
-                        <button><img src="imgs/ICONS/add.png"></button>
-                        <button><img src="imgs/ICONS/align-to-left.png"></button>
-                        <button><img src="imgs/ICONS/align-to-right.png"></button>
-                        <button><img src="imgs/ICONS/center-text-alignment.png"></button>
+                        <button onmousedown="onAddTxtBox()"><img src="imgs/ICONS/add.png"></button>
+                        <button onmousedown="onTextAlign('left')"><img src="imgs/ICONS/align-to-left.png"></button>
+                        <button onmousedown="onTextAlign('center')"><img src="imgs/ICONS/center-text-alignment.png"></button>
+                        <button onmousedown="onTextAlign('right')"><img src="imgs/ICONS/align-to-right.png"></button>
                         <button><img src="imgs/ICONS/decrease font - icon.png"></button>
                         <button><img src="imgs/ICONS/increase font - icon.png"></button>
                         <button><img src="imgs/ICONS/text stroke.png"></button>
@@ -133,7 +133,7 @@
     <script src="js/services/util.service.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
-    <!-- <script src="js/services/editor.service.js"></script> -->
+    <script src="js/services/editor.service.js"></script>
     <script src="js/editor.controller.js"></script>
     <script src="js/gallery.controller.js"></script>
 </body>
