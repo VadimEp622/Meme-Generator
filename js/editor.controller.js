@@ -137,3 +137,10 @@ function drawText(text, x, y, fontSize, textAlign) {
     gCtx.strokeText(text, x, y) // Draws (strokes) a given text at the given (x, y) position.
 
 }
+
+
+function downloadImg(elLink) {
+    // console.log('elLink', elLink)
+    const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
+    elLink.href = imgContent
+}

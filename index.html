@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meme Generator</title>
+    <script src="https://kit.fontawesome.com/65fb59720d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" href="#">
 </head>
@@ -79,28 +80,43 @@
 
                     <article class="text-editor-container">
                         <label>Text Edit Icons</label>
-                        <button onmousedown="onAddTxtBox()"><img src="imgs/ICONS/add.png"></button>
-                        <button onmousedown="onTextAlign('left')"><img src="imgs/ICONS/align-to-left.png"></button>
-                        <button onmousedown="onTextAlign('center')"><img src="imgs/ICONS/center-text-alignment.png"></button>
-                        <button onmousedown="onTextAlign('right')"><img src="imgs/ICONS/align-to-right.png"></button>
-                        <button onmousedown="onFontSizeDecrease()"><img src="imgs/ICONS/decrease font - icon.png"></button>
-                        <button onmousedown="onFontSizeIncrease()"><img src="imgs/ICONS/increase font - icon.png"></button>
-                        <button><img src="imgs/ICONS/text stroke.png"></button>
-                        <button><img src="imgs/ICONS/paint-board-and-brush.png"></button>
+                        <button class="btn-editor" onmousedown="onAddTxtBox()" disabled>
+                            <img src="imgs/ICONS/add.png"></button>
+                        <button class="btn-editor"  onmousedown="onTextAlign('left')">
+                            <img src="imgs/ICONS/align-to-left.png"></button>
+                        <button class="btn-editor"  onmousedown="onTextAlign('center')">
+                            <img src="imgs/ICONS/center-text-alignment.png"></button>
+                        <button class="btn-editor"  onmousedown="onTextAlign('right')">
+                            <img src="imgs/ICONS/align-to-right.png"></button>
+                        <button class="btn-editor"  onmousedown="onFontSizeDecrease()">
+                            <img src="imgs/ICONS/decrease font - icon.png"></button>
+                        <button class="btn-editor"  onmousedown="onFontSizeIncrease()">
+                            <img src="imgs/ICONS/increase font - icon.png"></button>
+                        <button class="btn-editor"  disabled><img src="imgs/ICONS/text stroke.png"></button>
+                        <button class="btn-editor"  disabled><img src="imgs/ICONS/paint-board-and-brush.png"></button>
                     </article>
 
                     <article>
                         <label>Other Icons</label>
-                        <button><img src="imgs/ICONS/search-icon.png"></button>
-                        <button><img src="imgs/ICONS/trash.png"></button>
-                        <button><img src="imgs/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"></button>
+                        <button class="btn-editor"  disabled><img src="imgs/ICONS/search-icon.png"></button>
+                        <button class="btn-editor"  disabled><img src="imgs/ICONS/trash.png"></button>
+                        <button class="btn-editor"  disabled>
+                            <img src="imgs/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"></button>
                     </article>
 
                     <article class="social-network-container">
                         <label>Social Network / Share Icons</label>
-                        <button><img src="imgs/ICONS/facebook-logo.png"></button>
-                        <button><img src="imgs/ICONS/github-logo.png"></button>
-                        <button><img src="imgs/ICONS/linkedin-logo.png"></button>
+
+                        <button class="btn-editor" disabled><img src="imgs/ICONS/facebook-logo.png"></button>
+                        <button class="btn-editor" disabled><img src="imgs/ICONS/github-logo.png"></button>
+                        <button class="btn-editor" disabled><img src="imgs/ICONS/linkedin-logo.png"></button>
+                    </article>
+
+                    <article class="download-container">
+                        <label>Download</label>
+                        <a class="" href="#" onmousedown="downloadImg(this)" download="my-img.jpg">
+                            <i class="btn-editor btn-download fa-solid fa-download"></i>
+                        </a>
                     </article>
 
 

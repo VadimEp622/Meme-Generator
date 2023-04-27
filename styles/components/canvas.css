@@ -2,30 +2,46 @@ canvas {
     border: 1px solid black;
 }
 
-.canvas-container{
+.canvas-container {
     /* width: 30vw; */
     /* height: 10vh; */
 }
+
 .meme-editor-tool-container {
     height: 100%;
     column-gap: 50px;
-    padding-inline: 50px;   
+    padding-inline: 50px;
     /* max-width: 50vw; */
 }
 
 .page-meme-editor {
     height: 100%;
 }
-.meme-editor-tool{
+
+.meme-editor-tool {
     background-color: var(--clr3);
 }
-.meme-editor-tool button {
+
+.btn-editor {
     padding: var(--btn-padding);
-    background-color: var(--clr0);
+    background-color: var(--clr4);
     border: none;
     border-radius: 25%;
 }
-.meme-editor-tool button img{
+
+.btn-editor:not(button[disabled]) {
+    background-color: var(--clr0);
+}
+
+.btn-editor:not(button[disabled]):hover {
+    background-color: var(--clr4);
+}
+
+.btn-download {
+    font-size: 40px;
+}
+
+.meme-editor-tool button img {
     height: 40px;
     width: 40px;
     display: block;
