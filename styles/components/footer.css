@@ -1,5 +1,5 @@
 .footer-container {
-    background-color: orange;
+    background-color: var(--clr-1);
     /* height: var(--header-height); */
     /* height: ; */
     /* position: absolute;

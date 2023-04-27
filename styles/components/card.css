@@ -20,7 +20,7 @@
 .meme-card .modal {
     position: absolute;
     inset: auto 0 -15px;
-    color: white;
+    color: var(--clr1);
     opacity: 0;
     text-align: center;
     transition: opacity 0.5s ease-in-out, bottom 0.3s ease-in-out;

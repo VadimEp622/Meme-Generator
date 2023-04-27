@@ -1,5 +1,4 @@
-
-.filter-tags>*:first-child{
+.filter-tags>*:first-child {
     padding-inline-start: 50px;
 }
 
@@ -7,10 +6,15 @@
     padding-inline-end: 50px;
 }
 
-.filter-tools { 
+.filter-tools {
     /* height: calc(var(--header-height)/2); */
     padding: 15px;
 }
-.filter-tools a:hover{
+
+.filter-tools input#search:hover {
+    cursor: not-allowed;
+}
+
+.filter-tools a:hover {
     background-color: gray;
 }

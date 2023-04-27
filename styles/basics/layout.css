@@ -9,7 +9,7 @@
 .main-layout>*:not(.full) {
     /* background-color: blue; */
     grid-column: 2;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 .main-layout>.full {
