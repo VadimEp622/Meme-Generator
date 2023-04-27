@@ -27,7 +27,6 @@ function renderMemes() {
     document.querySelector('.meme-gallery').innerHTML = strHtml
 }
 
-
 function onMemeClick(imageId) {
     console.log('imageId', imageId)
     changePageTo('page-meme-editor')
@@ -35,8 +34,6 @@ function onMemeClick(imageId) {
     onInitCanvas(imageId)
 
 }
-
-
 
 function onPageChange(pageName) {
     console.log('pageName', pageName)
