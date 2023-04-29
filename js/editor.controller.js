@@ -117,7 +117,7 @@ function onFillColorChange(color) {
 }
 
 function onResetCanvasImg(){
-    gCtx.reset()
+    // gCtx.reset()
     resetMemeEditor()
     renderImg(gImg)
     onAddTxtBox()
