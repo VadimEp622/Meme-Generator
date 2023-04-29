@@ -205,8 +205,8 @@ function renderImg(img) {
 
 
 function resizeCanvas() {
-    gElCanvas.width = gElCanvas.offsetWidth
-    gElCanvas.height = gElCanvas.offsetHeight
+    // gElCanvas.width = gElCanvas.offsetWidth
+    // gElCanvas.height = gElCanvas.offsetHeight
 }
 
 

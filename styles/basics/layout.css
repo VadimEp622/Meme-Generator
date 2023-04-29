@@ -1,10 +1,5 @@
 /* MAIN layout */
-.main-layout {
-    display: grid;
-    /* grid-template-columns: minmax(260px, 1fr) minmax(auto, 980px) minmax(260px, 1fr); */
-    grid-template-columns: minmax(5.769vw, 1fr) minmax(auto, 1800px) minmax(5.769vw, 1fr);
-    grid-template-rows: auto 1fr auto;
-}
+
 
 .main-layout>*:not(.full) {
     /* background-color: blue; */

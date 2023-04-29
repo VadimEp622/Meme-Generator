@@ -3,13 +3,13 @@ canvas {
     display: block;
 }
 
-.canvas-container{
+.canvas-container {
     border: 1px solid var(--clr0);
     align-self: center;
     /* position: relative; */
 }
 
-.txtBoxFocus{
+.txtBoxFocus {
     /* position: absolute; */
     /* top: 0; */
 }
@@ -17,12 +17,21 @@ canvas {
 .meme-editor-tool-container {
     height: 100%;
     column-gap: 50px;
-    padding-inline: 50px;
-    display: grid;
-    grid-template-columns: max-content auto;
+    /* padding-inline: 50px; */
+    /* display: grid; */
+    /* grid-template-columns: max-content auto; */
+
+
+    /* grid-template-columns: minmax(max-content,1fr) minmax(250px,1fr); */
+    /* grid-template-columns: minmax(300px,1fr) minmax(250px,1fr); */
+
+
     align-content: center;
     justify-content: space-evenly;
 }
+
+
+
 
 .page-meme-editor {
     height: 100%;
@@ -63,11 +72,11 @@ canvas {
     display: block;
 }
 
-.btn-clr{
+.btn-clr {
     position: relative;
 }
 
-.btn-clr input{
+.btn-clr input {
     border-radius: 20%;
     position: absolute;
     display: block;
