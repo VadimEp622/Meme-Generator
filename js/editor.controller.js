@@ -22,7 +22,7 @@ function onInitCanvas(imageId) {
 
     onImgInput(imageId)
 
-    resizeCanvas()
+    // resizeCanvas()
 
 
 }
@@ -181,16 +181,19 @@ function loadNewImgElement(imageId, onImageReady) {
     // console.log('img.naturalWidth', img.naturalWidth)
     // console.log('img.naturalHeight', img.naturalHeight)
 
-    gElCanvas.width = img.naturalWidth
-    gElCanvas.height = img.naturalHeight
-
-    setCanvasSize(img.naturalWidth, img.naturalHeight)
+    // gElCanvas.width = img.naturalWidth
+    // gElCanvas.height = img.naturalHeight
+    // setCanvasSize(img.naturalWidth, img.naturalHeight)
 
     img.onload = () => onImageReady(img)
     gImg = img
 }
 
 function renderLoadedImg(img) {
+    gElCanvas.width = img.naturalWidth
+    gElCanvas.height = img.naturalHeight
+    setCanvasSize(img.naturalWidth, img.naturalHeight)
+
     gImg = img
     createCanvasTxtBox()
     // resizeCanvas()

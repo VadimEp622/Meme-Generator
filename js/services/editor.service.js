@@ -91,6 +91,10 @@ function resetEditor() {
     gTxtBoxes.splice(0, gTxtBoxes.length)
     gCurrTextAlign = 'center'
     gCurrSelectedTextId = 1
+
+    // const newCanvas = _createCanvas()
+    // gCanvas.width = newCanvas.width
+    // gCanvas.height = newCanvas.height
 }
 
 
