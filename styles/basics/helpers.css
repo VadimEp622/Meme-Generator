@@ -3,17 +3,8 @@
     display: flex;
 }
 
-.flex-row{
-    display: flex;
-    flex-direction: row;
-}
-
-.flex.space-between {
-    justify-content: space-between;
-}
-
-.flex.space-evenly,.flex-row{
-    justify-content: space-evenly;
+.flex.column{
+    flex-direction: column;
 }
 
 .flex.justify-center {
@@ -23,3 +14,12 @@
 .flex.align-center {
     align-items: center;
 }
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.space-evenly{
+    justify-content: space-evenly;
+}
+

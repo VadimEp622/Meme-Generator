@@ -66,11 +66,9 @@
 
         <!-- PAGE-MEME-EDITOR -->
         <section class="page-meme-editor" hidden>
-            <section class="meme-editor-tool-container flex align-center space-evenly">
-                <section class="canvas-container">
-                    <canvas height="400" width="400"></canvas>
-                </section>
-                <section class="meme-editor-tool">
+            <section class="meme-editor-tool-container">
+                <canvas height="400" width="400"></canvas>
+                <section class="meme-editor-tool flex column align-center space-evenly">
                     <label>Meme editor here</label>
 
                     <article class="input-text-container">
@@ -97,7 +95,7 @@
                             <img src="imgs/ICONS/text stroke.png">
                             <input type="color" value="" oninput="onStrokeColorChange(this.value)">
                         </button>
-                        <button class="btn-editor btn-clr" >
+                        <button class="btn-editor btn-clr">
                             <img src="imgs/ICONS/paint-board-and-brush.png">
                             <input type="color" value="" oninput="onFillColorChange(this.value)">
                         </button>
@@ -131,17 +129,16 @@
                     <!-- <button><img src="imgs/ICONS/"></button> -->
                 </section>
             </section>
-        </section>
 
-        <!-- PAGE-SAVED-MEMES -->
-        <section class="page-saved-memes" hidden>
-            <section> Saved memes here</section>
-        </section>
+            <!-- PAGE-SAVED-MEMES -->
+            <section class="page-saved-memes" hidden>
+                <section> Saved memes here</section>
+            </section>
 
-        <!-- PAGE-ABOUT -->
-        <section class="page-about" hidden>
-            <section> About here</section>
-        </section>
+            <!-- PAGE-ABOUT -->
+            <section class="page-about" hidden>
+                <section> About here</section>
+            </section>
 
     </main>
 
