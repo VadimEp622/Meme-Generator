@@ -32,6 +32,10 @@
         transition: max-height 0.4s ease-in-out;
     }
 
+    .menu-open .navigate{
+        max-height: 100%;
+    }
+
     .filter-tools {
         flex-direction: column;
     }

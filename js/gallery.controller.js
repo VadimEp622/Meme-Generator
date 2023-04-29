@@ -48,8 +48,5 @@ function changePageTo(toPage) {
 }
 
 function onToggleMenu() {
-    const elNav = document.querySelector('.header-container .navigate')
-    if (elNav.style.maxHeight!=='100%') elNav.style.maxHeight='100%'
-    else elNav.style.maxHeight='0'
-   
+    document.body.classList.toggle('menu-open')
 }
