@@ -119,7 +119,7 @@ function _createTxtBox() {
 
 function _getTxtXposByTextAlign(textAlign) {
     if (textAlign === 'left') return 0
-    else if (textAlign === 'center') return gCanvas.width * 0.4
+    else if (textAlign === 'center') return gCanvas.width * 0.5
     else return gCanvas.width
 }
 
