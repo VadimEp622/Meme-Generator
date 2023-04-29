@@ -4,8 +4,9 @@ let gElCanvas
 let gCtx
 let gImg
 
-let gWindowWidth=window.innerWidth
-// TODO: make canvas adjust to img width
+let gWindowWidth = window.innerWidth
+
+// TODO: make on exiting meme edit to reset parameters
 
 
 
@@ -14,13 +15,15 @@ function onInitCanvas(imageId) {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    window.addEventListener('resize', resizeCanvas)
-    console.log('window', window)
-    console.log('gWindowWidth', gWindowWidth)
+    // window.addEventListener('resize', resizeCanvas)
+    // console.log('window', window)
+    // console.log('gWindowWidth', gWindowWidth)
 
-    // resizeCanvas()
 
     onImgInput(imageId)
+
+    resizeCanvas()
+
 
 }
 
@@ -33,6 +36,7 @@ function onFontSizeDecrease() {
     const txtBox = getTxtBox()
 
     drawAllTxt()
+    drawFocusRect()
 }
 
 function onFontSizeIncrease() {
@@ -40,27 +44,37 @@ function onFontSizeIncrease() {
     const txtBox = getTxtBox()
 
     drawAllTxt()
+    drawFocusRect()
+}
+
+function onSetNextFocusTextBox(){
+    setNextFocusTextBox()
+
+    drawAllTxt()
+    drawFocusRect()
 }
 
 function onTextInput(value) {
     // console.log('value', value)
-    const canvas = getCanvas()
+    // const canvas = getCanvas()
     // console.log('canvas', canvas)
     setTxtBoxContent(value)
-    const txtBox = getTxtBox()
+    // const txtBox = getTxtBox()
     // console.log('txtBox', txtBox)
 
 
     drawAllTxt()
+    drawFocusRect()
 }
 
 
 function onTextAlign(textAlign) {
     // console.log('textAlign', textAlign)
     setTxtBoxTextAlign(textAlign)
-    const txtBox = getTxtBox()
+    // const txtBox = getTxtBox()
 
     drawAllTxt()
+    drawFocusRect()
 }
 
 function onAddTxtBox() {
@@ -75,44 +89,71 @@ function onAddTxtBox() {
     `).join('')
 
     document.querySelector('.input-text-container').innerHTML = strHtml
+
+    drawAllTxt()
+    drawFocusRect()
 }
 
 function onInputClick(id) {
     console.log('id', id)
+
+    drawAllTxt()
     setCurrSelectedTextBoxId(parseInt(id))
+    drawFocusRect()
 }
 
 function onStrokeColorChange(color) {
-    console.log('color', color)
     setStrokeColor(color)
+
     drawAllTxt()
+    drawFocusRect()
 }
 
-function onFillColorChange(color){
+function onFillColorChange(color) {
     setFillColor(color)
+
     drawAllTxt()
+    drawFocusRect()
 }
+
 //------------------------------------------------------//
+// TODO: make focus one at a time
+
+
+function drawFocusRect() {
+    const txtBox = getTxtBox()
+    const { textXpos, textYpos, fontSize } = txtBox
+    const contentLen = txtBox.content.length
+    console.log('textXpos, textYpos', textXpos, textYpos)
+
+    const pos = {
+        x: 2,
+        y: textYpos - 5,
+        xEnd: parseInt(gElCanvas.width),
+        yEnd: textYpos + fontSize,
+    }
+
+    drawRectangle(pos.x, pos.y, pos.xEnd - pos.x, pos.yEnd - pos.y)
+}
+
+
+function drawRectangle(x, y, dx, dy) {
+    // gCtx.save()
+
+    gCtx.lineWidth = 1
+    gCtx.shadowColor = 'white';
+    gCtx.shadowBlur = 5;
+    gCtx.strokeStyle = 'black'
+    gCtx.strokeRect(x, y, dx, dy)
+
+    gCtx.restore()
+}
 
 
 function drawAllTxt() {
     const txtBoxes = getTxtBoxes()
-    const currTxtBoxId = getCurrSelectedTextBoxId()
     renderImg(gImg)
-    txtBoxes.forEach(txtBox => {
-        setCurrSelectedTextBoxId(txtBox.textBoxId)
-        // drawText(txtBox)
-        drawText(
-            txtBox.content,
-            txtBox.textXpos,
-            txtBox.textYpos,
-            txtBox.fontSize,
-            txtBox.textAlign,
-            txtBox.textStrokeColor,
-            txtBox.textFillColor
-        )
-    })
-    setCurrSelectedTextBoxId(currTxtBoxId)
+    txtBoxes.forEach(txtBox => drawText(txtBox))
 }
 
 
@@ -141,8 +182,9 @@ function loadNewImgElement(imageId, onImageReady) {
 function renderLoadedImg(img) {
     gImg = img
     createCanvasTxtBox()
-    renderImg(img)
     // resizeCanvas()
+    renderImg(img)
+    drawFocusRect()
 }
 
 function renderImg(img) {
@@ -153,56 +195,41 @@ function renderImg(img) {
 
 
 function resizeCanvas() {
-    
-    // const elMemeEditorContainer=document.querySelector('.meme-editor-tool-container')
-    // const elCanvasContainer = document.querySelector('.canvas-container')
-    // const elContainer = document.querySelector('canvas')
-
-    // console.log('elContainer', elContainer)
-    // console.log('elContainer.innerWidth', elContainer.innerWidth)
-
-    // gElCanvas.width = elContainer.offsetWidth
-    // gElCanvas.height = elContainer.offsetHeight
-
-    
-    // console.log('elMemeEditorContainer.offsetWidth', elMemeEditorContainer.offsetWidth)
-
-    // elCanvasContainer.width = elMemeEditorContainer.offsetWidth/3
-    // elCanvasContainer.height = elMemeEditorContainer.offsetWidth/3
-    // gElCanvas.width = elMemeEditorContainer.offsetWidth/3
-    // gElCanvas.height = elMemeEditorContainer.offsetWidth/3
-    // console.log('elContainer.offsetHeight', elContainer.offsetHeight)
-
-    // gElCanvas.width = elContainer.clientWidth
-    // console.log('elContainer.clientWidth', elContainer.clientWidth)
-    // console.log('elContainer.clientWidth', elContainer.screenX)
-
-    // drawAllTxt()
+    gElCanvas.width = gElCanvas.offsetWidth
+    gElCanvas.height = gElCanvas.offsetHeight
 }
 
 
-
-
-
-// TODO: make function recieve just one whole textBox object, and fill gCtx with its keys values
-function drawText(text, x, y, fontSize, textAlign, strokeColor, fillColor) {
-    // console.log('text, x, y, fontSize, textAlign, strokeColor, fillColor', text, x, y, fontSize, textAlign, strokeColor, fillColor)
+function drawText(txtBox) {
 
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = `${strokeColor}`
-    gCtx.fillStyle = `${fillColor}`
-    gCtx.font = `${fontSize}px Arial`
-    gCtx.textAlign = textAlign
-    gCtx.textBaseline = 'middle'
+    gCtx.strokeStyle = `${txtBox.textStrokeColor}`
+    gCtx.fillStyle = `${txtBox.textFillColor}`
+    gCtx.font = `${txtBox.fontSize}px Arial`
+    gCtx.textAlign = txtBox.textAlign
+    gCtx.textBaseline = 'top'
 
-    gCtx.fillText(text, x, y) // Draws (fills) a given text at the given (x, y) position.
-    gCtx.strokeText(text, x, y) // Draws (strokes) a given text at the given (x, y) position.
+    gCtx.fillText(txtBox.content, txtBox.textXpos, txtBox.textYpos) // Draws (fills) a given text at the given (x, y) position.
 
+    gCtx.strokeText(txtBox.content, txtBox.textXpos, txtBox.textYpos) // Draws (strokes) a given text at the given (x, y) position.
+    gCtx.save()
 }
 
 
 function downloadImg(elLink) {
+    drawAllTxt()
     // console.log('elLink', elLink)
     const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
     elLink.href = imgContent
+}
+
+
+function resetMemeEditor() {
+    gCtx.reset()
+    resetEditor()
+    document.querySelector('.input-text-container').innerHTML = `
+    <label>Text 1:</label>
+    <input  data-id="1" type="text" value="" 
+    onmousedown="onInputClick(this.dataset.id)" onkeyup="onTextInput(this.value)"><br>
+    `
 }

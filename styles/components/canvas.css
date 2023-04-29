@@ -1,9 +1,18 @@
 canvas {
-    border: 1px solid var(--clr0);
     width: 100%;
-    align-self: center;
+    display: block;
 }
 
+.canvas-container{
+    border: 1px solid var(--clr0);
+    align-self: center;
+    /* position: relative; */
+}
+
+.txtBoxFocus{
+    /* position: absolute; */
+    /* top: 0; */
+}
 
 .meme-editor-tool-container {
     height: 100%;

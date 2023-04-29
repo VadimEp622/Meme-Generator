@@ -64,12 +64,15 @@ function setStrokeColor(color) {
     gTxtBoxes[currIdx].textStrokeColor = color
 }
 
-function setFillColor(color){
+function setFillColor(color) {
     const currIdx = _getTxtBoxIdx()
     gTxtBoxes[currIdx].textFillColor = color
 }
 
-
+function setNextFocusTextBox() {
+    gCurrSelectedTextId++
+    if (_getTxtBoxIdx() < 0) gCurrSelectedTextId = 1
+}
 
 
 // CREATE //
@@ -83,6 +86,12 @@ function createCanvasTxtBox() {
 }
 
 
+function resetEditor() {
+    gTxtBoxId = 1
+    gTxtBoxes.splice(0, gTxtBoxes.length)
+    gCurrTextAlign = 'center'
+    gCurrSelectedTextId = 1
+}
 
 
 
@@ -110,14 +119,14 @@ function _createTxtBox() {
 
 function _getTxtXposByTextAlign(textAlign) {
     if (textAlign === 'left') return 0
-    else if (textAlign === 'center') return gCanvas.width * 0.5
+    else if (textAlign === 'center') return gCanvas.width * 0.4
     else return gCanvas.width
 }
 
 function _getTxtYposById(textBoxId) {
     if (textBoxId === 1) return gCanvas.height * 0.1
-    else if (textBoxId === 2) return gCanvas.height * 0.9
-    else return gCanvas.height * 0.5
+    else if (textBoxId === 2) return gCanvas.height * 0.8
+    else return gCanvas.height * 0.4
 }
 
 

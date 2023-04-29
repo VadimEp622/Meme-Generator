@@ -37,6 +37,7 @@ function onMemeClick(imageId) {
 
 function onPageChange(pageName) {
     console.log('pageName', pageName)
+    resetMemeEditor()
     changePageTo(pageName)
 }
 

@@ -37,7 +37,7 @@
     <main class="">
 
         <!-- PAGE-MAIN-GALLERY -->
-        <section class="page-main-gallery">
+        <section class="page-main-gallery ">
             <!-- FILTER -->
             <section class="filter-tools flex">
                 <label for="search">Search:</label>
@@ -67,7 +67,9 @@
         <!-- PAGE-MEME-EDITOR -->
         <section class="page-meme-editor" hidden>
             <section class="meme-editor-tool-container">
-                <canvas height="400" width="400"></canvas>
+                <section class="canvas-container">
+                    <canvas height="400" width="400"></canvas>
+                </section>
                 <section class="meme-editor-tool flex column align-center space-evenly">
                     <label>Meme editor here</label>
 
@@ -105,7 +107,7 @@
                         <label></label>
                         <button class="btn-editor" disabled><img src="imgs/ICONS/search-icon.png"></button>
                         <button class="btn-editor" disabled><img src="imgs/ICONS/trash.png"></button>
-                        <button class="btn-editor" disabled>
+                        <button class="btn-editor" onmousedown="onSetNextFocusTextBox()">
                             <img src="imgs/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"></button>
                     </article>
 
@@ -124,9 +126,6 @@
                     </article>
 
 
-                    <!-- <button><img src="imgs/ICONS/"></button> -->
-                    <!-- <button><img src="imgs/ICONS/"></button> -->
-                    <!-- <button><img src="imgs/ICONS/"></button> -->
                 </section>
             </section>
 
