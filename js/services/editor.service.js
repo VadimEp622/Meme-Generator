@@ -64,6 +64,11 @@ function setStrokeColor(color) {
     gTxtBoxes[currIdx].textStrokeColor = color
 }
 
+function setFillColor(color){
+    const currIdx = _getTxtBoxIdx()
+    gTxtBoxes[currIdx].textFillColor = color
+}
+
 
 
 

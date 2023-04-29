@@ -83,6 +83,11 @@ function onStrokeColorChange(color) {
     setStrokeColor(color)
     drawAllTxt()
 }
+
+function onFillColorChange(color){
+    setFillColor(color)
+    drawAllTxt()
+}
 //------------------------------------------------------//
 
 
@@ -99,6 +104,7 @@ function drawAllTxt() {
             txtBox.fontSize,
             txtBox.textAlign,
             txtBox.textStrokeColor,
+            txtBox.textFillColor
         )
     })
     setCurrSelectedTextBoxId(currTxtBoxId)
@@ -158,15 +164,13 @@ function resizeCanvas() {
 
 
 
-
-function drawText(text, x, y, fontSize, textAlign, strokeColor) {
-    console.log('text, x, y, fontSize, textAlign --', text, x, y, fontSize, textAlign, strokeColor)
-
-    // renderImg(gImg)
+// TODO: make function recieve just one whole textBox object, and fill gCtx with its keys values
+function drawText(text, x, y, fontSize, textAlign, strokeColor, fillColor) {
+    console.log('text, x, y, fontSize, textAlign, strokeColor, fillColor', text, x, y, fontSize, textAlign, strokeColor, fillColor)
 
     gCtx.lineWidth = 2
     gCtx.strokeStyle = `${strokeColor}`
-    gCtx.fillStyle = 'black'
+    gCtx.fillStyle = `${fillColor}`
     gCtx.font = `${fontSize}px Arial`
     gCtx.textAlign = textAlign
     gCtx.textBaseline = 'middle'
