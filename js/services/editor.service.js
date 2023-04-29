@@ -13,13 +13,20 @@ let gCurrSelectedTextId = 1
 function getCanvas() {
     return gCanvas
 }
+
+function getTxtBoxes() {
+    return gTxtBoxes
+}
+
 function getTxtBox() {
     return gTxtBoxes.find(txtBox => txtBox.textBoxId === gCurrSelectedTextId)
 }
 function getTxtBoxContent() {
     return gTxtBoxes[_getTxtBoxIdx()].content
 }
-
+function getCurrSelectedTextBoxId(){
+    return gCurrSelectedTextId
+}
 
 // SET //
 function setCanvasSize(width, height) {
@@ -48,13 +55,19 @@ function increaseFont() {
     gTxtBoxes[currIdx].fontSize += 2
 }
 
+function setCurrSelectedTextBoxId(id){
+    gCurrSelectedTextId=id
+}
+
 
 // CREATE //
 function createCanvasTxtBox() {
     const txtBox = _createTxtBox()
+    gCurrSelectedTextId = txtBox.textBoxId
     txtBox.textXpos = _getTxtXposByTextAlign(gCurrTextAlign)
     txtBox.textYpos = _getTxtYposById(txtBox.textBoxId)
     gTxtBoxes.push(txtBox)
+    return txtBox
 }
 
 

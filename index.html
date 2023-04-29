@@ -74,13 +74,13 @@
                     <label>Meme editor here</label>
 
                     <article class="input-text-container">
-                        <label>Text:</label>
-                        <input type="search" value="" onkeyup="onTextInput(this.value)">
+                        <label>Text 1:</label>
+                        <input data-id="1" type="text" value="" onmousedown="onInputClick(this.dataset.id)" onkeyup="onTextInput(this.value)"><br>
                     </article>
 
                     <article class="text-editor-container">
                         <label></label>
-                        <button class="btn-editor" onmousedown="onAddTxtBox()" disabled>
+                        <button class="btn-editor" onmousedown="onAddTxtBox()">
                             <img src="imgs/ICONS/add.png"></button>
                         <button class="btn-editor"  onmousedown="onTextAlign('left')">
                             <img src="imgs/ICONS/align-to-left.png"></button>

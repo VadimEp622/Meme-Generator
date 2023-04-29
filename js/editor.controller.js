@@ -4,25 +4,12 @@ let gElCanvas
 let gCtx
 let gImg
 
-// let gCanvasHeight = 400
-// let gCanvasWidth = 400
-
-// let gCurrSelectedTextId = 1
-
-// let gTxtInputs = [
-// {
-// textId: 1,
-// content: '',
-// textAlign: 'center',
-// textWidth,
-// textHeight,
-// },
-// ]
-
-
 
 // TODO: make canvas adjust to img width
 
+
+
+//-------------------On Functions----------------------//
 function onInitCanvas(imageId) {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
@@ -36,6 +23,77 @@ function onInitCanvas(imageId) {
 function onImgInput(imageId) {
     loadNewImgElement(imageId, renderLoadedImg)
 }
+
+function onFontSizeDecrease() {
+    decreaseFont()
+    const txtBox = getTxtBox()
+
+    drawAllTxt()
+}
+
+function onFontSizeIncrease() {
+    increaseFont()
+    const txtBox = getTxtBox()
+
+    drawAllTxt()
+}
+
+function onTextInput(value) {
+    // console.log('value', value)
+    const canvas = getCanvas()
+    // console.log('canvas', canvas)
+    setTxtBoxContent(value)
+    const txtBox = getTxtBox()
+    // console.log('txtBox', txtBox)
+
+
+    drawAllTxt()
+}
+
+
+function onTextAlign(textAlign) {
+    console.log('textAlign', textAlign)
+    setTxtBoxTextAlign(textAlign)
+    const txtBox = getTxtBox()
+
+    drawAllTxt()
+}
+
+function onAddTxtBox() {
+    createCanvasTxtBox()
+    const txtBoxes = getTxtBoxes()
+    console.log('txtBoxes', txtBoxes)
+
+    const strHtml = txtBoxes.map(txtBox => `
+    <label>Text ${txtBox.textBoxId}:</label>
+    <input  data-id="${txtBox.textBoxId}" type="text" value="${txtBox.content}" 
+    onmousedown="onInputClick(this.dataset.id)" onkeyup="onTextInput(this.value)"><br>
+    `).join('')
+
+    document.querySelector('.input-text-container').innerHTML = strHtml
+}
+
+function onInputClick(id){
+    console.log('id', id)
+    setCurrSelectedTextBoxId(parseInt(id))
+}
+
+//------------------------------------------------------//
+
+
+function drawAllTxt() {
+    const txtBoxes = getTxtBoxes()
+    const currTxtBoxId = getCurrSelectedTextBoxId()
+    renderImg(gImg)
+    txtBoxes.forEach(txtBox => {
+        setCurrSelectedTextBoxId(txtBox.textBoxId)
+        drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
+    })
+    setCurrSelectedTextBoxId(currTxtBoxId)
+}
+
+
+
 
 // DONE: find a way to put the actual, from the folder, image height and width, into new Image()
 //maybe 'imgElement.naturalWidth' , or 'imgElement.naturalHeight' might work
@@ -84,47 +142,15 @@ function resizeCanvas() {
     // console.log('elContainer.clientWidth', elContainer.screenX)
 }
 
-function onFontSizeDecrease(){
-    decreaseFont()
-    const txtBox = getTxtBox()
-    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
-}
-
-function onFontSizeIncrease(){
-    increaseFont()
-    const txtBox = getTxtBox()
-    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
-}
-
-function onTextInput(value) {
-    // console.log('value', value)
-    const canvas = getCanvas()
-    // console.log('canvas', canvas)
-    setTxtBoxContent(value)
-    const txtBox = getTxtBox()
-    // console.log('txtBox', txtBox)
-
-    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
-}
 
 
-function onTextAlign(textAlign) {
-    console.log('textAlign', textAlign)
-    setTxtBoxTextAlign(textAlign)
-    const txtBox = getTxtBox()
-    drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
-}
 
-function onAddTxtBox() {
-    // const newTxtBox = createCanvasTxtBox()
-    // const strHtml=``
-}
 
 
 function drawText(text, x, y, fontSize, textAlign) {
     console.log('text, x, y, fontSize, textAlign --', text, x, y, fontSize, textAlign)
 
-    renderImg(gImg)
+    // renderImg(gImg)
 
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'brown'
