@@ -12,24 +12,27 @@
     }
 
     .header-container .navigate span>* {
-        /* height: 100px; */
         padding: 0;
     }
 
     .header-container .navigate span {
-        /* height: 100px; */
+        padding: 25px;
+        background-color: var(--clr-1);
     }
 
     .header-container .navigate {
-        /* display: none; */
-        /* display: flex; */
-        display: none;
+        display: flex;
         flex-direction: column;
-        /* position: absolute; */
-        /* inset-inline-end: 0; */
+        position: absolute;
+        top: var(--header-height);
+        right: 0;
+        z-index: 1;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease-in-out;
     }
 
-    .filter-tools{
+    .filter-tools {
         flex-direction: column;
     }
 }
