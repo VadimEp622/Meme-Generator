@@ -39,6 +39,7 @@ function onPageChange(pageName) {
     console.log('pageName', pageName)
     resetMemeEditor()
     changePageTo(pageName)
+    onCloseMobileMenu()
 }
 
 function changePageTo(toPage) {
@@ -47,6 +48,11 @@ function changePageTo(toPage) {
     })
 }
 
-function onToggleMenu() {
+function onToggleMobileMenu() {
     document.body.classList.toggle('menu-open')
+}
+
+function onCloseMobileMenu(){
+    if(!document.body.classList.contains('menu-open')) return
+    document.body.classList.remove('menu-open')
 }
