@@ -116,8 +116,18 @@ function onFillColorChange(color) {
     drawFocusRect()
 }
 
+function onResetCanvasImg(){
+    resetMemeEditor()
+    renderImg(gImg)
+    onAddTxtBox()
+}
+
+
+
+
+
 //------------------------------------------------------//
-// TODO: make focus one at a time
+
 
 
 function drawFocusRect() {
