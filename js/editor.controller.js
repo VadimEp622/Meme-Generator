@@ -4,7 +4,7 @@ let gElCanvas
 let gCtx
 let gImg
 
-
+let gWindowWidth=window.innerWidth
 // TODO: make canvas adjust to img width
 
 
@@ -13,6 +13,10 @@ let gImg
 function onInitCanvas(imageId) {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
+
+    window.addEventListener('resize', resizeCanvas)
+    console.log('window', window)
+    console.log('gWindowWidth', gWindowWidth)
 
     // resizeCanvas()
 
@@ -52,7 +56,7 @@ function onTextInput(value) {
 
 
 function onTextAlign(textAlign) {
-    console.log('textAlign', textAlign)
+    // console.log('textAlign', textAlign)
     setTxtBoxTextAlign(textAlign)
     const txtBox = getTxtBox()
 
@@ -62,7 +66,7 @@ function onTextAlign(textAlign) {
 function onAddTxtBox() {
     createCanvasTxtBox()
     const txtBoxes = getTxtBoxes()
-    console.log('txtBoxes', txtBoxes)
+    // console.log('txtBoxes', txtBoxes)
 
     const strHtml = txtBoxes.map(txtBox => `
     <label>Text ${txtBox.textBoxId}:</label>
@@ -97,6 +101,7 @@ function drawAllTxt() {
     renderImg(gImg)
     txtBoxes.forEach(txtBox => {
         setCurrSelectedTextBoxId(txtBox.textBoxId)
+        // drawText(txtBox)
         drawText(
             txtBox.content,
             txtBox.textXpos,
@@ -148,16 +153,31 @@ function renderImg(img) {
 
 
 function resizeCanvas() {
-    const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetHeight
+    
+    // const elMemeEditorContainer=document.querySelector('.meme-editor-tool-container')
+    // const elCanvasContainer = document.querySelector('.canvas-container')
+    // const elContainer = document.querySelector('canvas')
 
-    // console.log('elContainer.offsetWidth', elContainer.offsetWidth)
+    // console.log('elContainer', elContainer)
+    // console.log('elContainer.innerWidth', elContainer.innerWidth)
+
+    // gElCanvas.width = elContainer.offsetWidth
+    // gElCanvas.height = elContainer.offsetHeight
+
+    
+    // console.log('elMemeEditorContainer.offsetWidth', elMemeEditorContainer.offsetWidth)
+
+    // elCanvasContainer.width = elMemeEditorContainer.offsetWidth/3
+    // elCanvasContainer.height = elMemeEditorContainer.offsetWidth/3
+    // gElCanvas.width = elMemeEditorContainer.offsetWidth/3
+    // gElCanvas.height = elMemeEditorContainer.offsetWidth/3
     // console.log('elContainer.offsetHeight', elContainer.offsetHeight)
 
     // gElCanvas.width = elContainer.clientWidth
     // console.log('elContainer.clientWidth', elContainer.clientWidth)
     // console.log('elContainer.clientWidth', elContainer.screenX)
+
+    // drawAllTxt()
 }
 
 
@@ -166,7 +186,7 @@ function resizeCanvas() {
 
 // TODO: make function recieve just one whole textBox object, and fill gCtx with its keys values
 function drawText(text, x, y, fontSize, textAlign, strokeColor, fillColor) {
-    console.log('text, x, y, fontSize, textAlign, strokeColor, fillColor', text, x, y, fontSize, textAlign, strokeColor, fillColor)
+    // console.log('text, x, y, fontSize, textAlign, strokeColor, fillColor', text, x, y, fontSize, textAlign, strokeColor, fillColor)
 
     gCtx.lineWidth = 2
     gCtx.strokeStyle = `${strokeColor}`

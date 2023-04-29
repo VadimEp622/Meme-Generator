@@ -1,5 +1,6 @@
 canvas {
     border: 1px solid var(--clr0);
+    width: 100%;
 }
 
 /* .canvas-container { */
@@ -24,6 +25,7 @@ canvas {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    /* width: 100%; */
 }
 
 .btn-editor {
