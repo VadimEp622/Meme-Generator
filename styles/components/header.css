@@ -24,3 +24,7 @@ header .navigate>*:not(:last-child) {
 header a:hover {
     background-color: var(--clr-2);
 }
+
+.navigate span a{
+    font-family: ubuntu;
+}

@@ -117,6 +117,7 @@ function onFillColorChange(color) {
 }
 
 function onResetCanvasImg(){
+    gCtx.reset()
     resetMemeEditor()
     renderImg(gImg)
     onAddTxtBox()
@@ -235,7 +236,6 @@ function downloadImg(elLink) {
 
 
 function resetMemeEditor() {
-    gCtx.reset()
     resetEditor()
     document.querySelector('.input-text-container').innerHTML = `
     <label>Text 1:</label>
