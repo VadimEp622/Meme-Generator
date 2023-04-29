@@ -45,5 +45,10 @@ function changePageTo(toPage) {
     PAGE_CLASSES.forEach(pageClass => {
         document.querySelector(`.${pageClass}`).hidden = (pageClass === toPage) ? false : true
     })
+}
 
+function onToggleMenu() {
+    const elNav = document.querySelector('.header-container .navigate')
+    if (elNav.style.display === 'flex') elNav.style.display = 'none'
+    else elNav.style.display = 'flex'
 }

@@ -1,14 +1,36 @@
-
 @media (max-width:800px) {
-    .main-layout{
+    .main-layout {
         display: flex;
         flex-direction: column;
-        justify-content:space-between;
+        justify-content: space-between;
     }
+
     .meme-editor-tool-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .header-container .navigate span>* {
+        /* height: 100px; */
+        padding: 0;
+    }
+
+    .header-container .navigate span {
+        /* height: 100px; */
+    }
+
+    .header-container .navigate {
+        /* display: none; */
+        /* display: flex; */
+        display: none;
+        flex-direction: column;
+        /* position: absolute; */
+        /* inset-inline-end: 0; */
+    }
+
+    .filter-tools{
+        flex-direction: column;
     }
 }
 
@@ -18,10 +40,15 @@
         grid-template-columns: minmax(5.769vw, 1fr) minmax(auto, 1800px) minmax(5.769vw, 1fr);
         grid-template-rows: auto 1fr auto;
     }
+
     .meme-editor-tool-container {
         display: grid;
         padding-inline: 50px;
         grid-template-columns: minmax(300px, 1fr) minmax(250px, 1fr);
+    }
+
+    .header-container .menu-button {
+        display: none;
     }
 }
 
