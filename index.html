@@ -75,32 +75,36 @@
 
                     <article class="input-text-container">
                         <label>Text 1:</label>
-                        <input data-id="1" type="text" value="" onmousedown="onInputClick(this.dataset.id)" onkeyup="onTextInput(this.value)"><br>
+                        <input data-id="1" type="text" value="" onmousedown="onInputClick(this.dataset.id)"
+                            onkeyup="onTextInput(this.value)"><br>
                     </article>
 
                     <article class="text-editor-container">
                         <label></label>
                         <button class="btn-editor" onmousedown="onAddTxtBox()">
                             <img src="imgs/ICONS/add.png"></button>
-                        <button class="btn-editor"  onmousedown="onTextAlign('left')">
+                        <button class="btn-editor" onmousedown="onTextAlign('left')">
                             <img src="imgs/ICONS/align-to-left.png"></button>
-                        <button class="btn-editor"  onmousedown="onTextAlign('center')">
+                        <button class="btn-editor" onmousedown="onTextAlign('center')">
                             <img src="imgs/ICONS/center-text-alignment.png"></button>
-                        <button class="btn-editor"  onmousedown="onTextAlign('right')">
+                        <button class="btn-editor" onmousedown="onTextAlign('right')">
                             <img src="imgs/ICONS/align-to-right.png"></button>
-                        <button class="btn-editor"  onmousedown="onFontSizeDecrease()">
+                        <button class="btn-editor" onmousedown="onFontSizeDecrease()">
                             <img src="imgs/ICONS/decrease font - icon.png"></button>
-                        <button class="btn-editor"  onmousedown="onFontSizeIncrease()">
+                        <button class="btn-editor" onmousedown="onFontSizeIncrease()">
                             <img src="imgs/ICONS/increase font - icon.png"></button>
-                        <button class="btn-editor"  disabled><img src="imgs/ICONS/text stroke.png"></button>
-                        <button class="btn-editor"  disabled><img src="imgs/ICONS/paint-board-and-brush.png"></button>
+                        <button class="btn-editor btn-clr">
+                            <img src="imgs/ICONS/text stroke.png">
+                            <input type="color" value="" oninput="onStrokeColorChange(this.value)">
+                        </button>
+                        <button class="btn-editor" disabled><img src="imgs/ICONS/paint-board-and-brush.png"></button>
                     </article>
 
                     <article>
                         <label></label>
-                        <button class="btn-editor"  disabled><img src="imgs/ICONS/search-icon.png"></button>
-                        <button class="btn-editor"  disabled><img src="imgs/ICONS/trash.png"></button>
-                        <button class="btn-editor"  disabled>
+                        <button class="btn-editor" disabled><img src="imgs/ICONS/search-icon.png"></button>
+                        <button class="btn-editor" disabled><img src="imgs/ICONS/trash.png"></button>
+                        <button class="btn-editor" disabled>
                             <img src="imgs/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"></button>
                     </article>
 

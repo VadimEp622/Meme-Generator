@@ -24,7 +24,7 @@ function getTxtBox() {
 function getTxtBoxContent() {
     return gTxtBoxes[_getTxtBoxIdx()].content
 }
-function getCurrSelectedTextBoxId(){
+function getCurrSelectedTextBoxId() {
     return gCurrSelectedTextId
 }
 
@@ -55,9 +55,16 @@ function increaseFont() {
     gTxtBoxes[currIdx].fontSize += 2
 }
 
-function setCurrSelectedTextBoxId(id){
-    gCurrSelectedTextId=id
+function setCurrSelectedTextBoxId(id) {
+    gCurrSelectedTextId = id
 }
+
+function setStrokeColor(color) {
+    const currIdx = _getTxtBoxIdx()
+    gTxtBoxes[currIdx].textStrokeColor = color
+}
+
+
 
 
 // CREATE //
@@ -88,6 +95,8 @@ function _createTxtBox() {
         textBoxId: gTxtBoxId++,
         content: '',
         textAlign: 'center',
+        textStrokeColor: 'brown',
+        textFillColor: 'black',
         textXpos: null,
         textYpos: null,
         fontSize: 40,

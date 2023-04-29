@@ -73,11 +73,16 @@ function onAddTxtBox() {
     document.querySelector('.input-text-container').innerHTML = strHtml
 }
 
-function onInputClick(id){
+function onInputClick(id) {
     console.log('id', id)
     setCurrSelectedTextBoxId(parseInt(id))
 }
 
+function onStrokeColorChange(color) {
+    console.log('color', color)
+    setStrokeColor(color)
+    drawAllTxt()
+}
 //------------------------------------------------------//
 
 
@@ -87,7 +92,14 @@ function drawAllTxt() {
     renderImg(gImg)
     txtBoxes.forEach(txtBox => {
         setCurrSelectedTextBoxId(txtBox.textBoxId)
-        drawText(txtBox.content, txtBox.textXpos, txtBox.textYpos, txtBox.fontSize, txtBox.textAlign)
+        drawText(
+            txtBox.content,
+            txtBox.textXpos,
+            txtBox.textYpos,
+            txtBox.fontSize,
+            txtBox.textAlign,
+            txtBox.textStrokeColor,
+        )
     })
     setCurrSelectedTextBoxId(currTxtBoxId)
 }
@@ -147,13 +159,13 @@ function resizeCanvas() {
 
 
 
-function drawText(text, x, y, fontSize, textAlign) {
-    console.log('text, x, y, fontSize, textAlign --', text, x, y, fontSize, textAlign)
+function drawText(text, x, y, fontSize, textAlign, strokeColor) {
+    console.log('text, x, y, fontSize, textAlign --', text, x, y, fontSize, textAlign, strokeColor)
 
     // renderImg(gImg)
 
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'brown'
+    gCtx.strokeStyle = `${strokeColor}`
     gCtx.fillStyle = 'black'
     gCtx.font = `${fontSize}px Arial`
     gCtx.textAlign = textAlign

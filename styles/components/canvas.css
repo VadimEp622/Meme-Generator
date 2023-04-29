@@ -45,8 +45,27 @@ canvas {
     font-size: 40px;
 }
 
+/* input{
+    display: block;
+} */
+
 .meme-editor-tool button img {
     height: 40px;
     width: 40px;
     display: block;
+}
+
+.btn-clr{
+    position: relative;
+}
+
+.btn-clr input{
+    border-radius: 20%;
+    position: absolute;
+    display: block;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
