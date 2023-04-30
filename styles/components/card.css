@@ -15,6 +15,7 @@
 
 .image-container:hover img {
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .meme-card .modal {
