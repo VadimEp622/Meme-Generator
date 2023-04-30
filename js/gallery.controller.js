@@ -10,7 +10,6 @@ function onInit() {
 
 function renderMemes() {
     const memes = getMemes()
-    console.log('memes', memes)
 
     const strHtml = memes.map(meme =>
         `
@@ -22,21 +21,17 @@ function renderMemes() {
         </article>
         `
     ).join('')
-    // console.log('strHtml', strHtml)
 
     document.querySelector('.meme-gallery').innerHTML = strHtml
 }
 
 function onMemeClick(imageId) {
-    console.log('imageId', imageId)
     changePageTo('page-meme-editor')
-
     onInitCanvas(imageId)
 
 }
 
 function onPageChange(pageName) {
-    console.log('pageName', pageName)
     resetMemeEditor()
     changePageTo(pageName)
     onCloseMobileMenu()
@@ -52,7 +47,7 @@ function onToggleMobileMenu() {
     document.body.classList.toggle('menu-open')
 }
 
-function onCloseMobileMenu(){
-    if(!document.body.classList.contains('menu-open')) return
+function onCloseMobileMenu() {
+    if (!document.body.classList.contains('menu-open')) return
     document.body.classList.remove('menu-open')
 }

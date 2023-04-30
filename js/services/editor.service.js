@@ -13,11 +13,9 @@ let gCurrSelectedTextId = 1
 function getCanvas() {
     return gCanvas
 }
-
 function getTxtBoxes() {
     return gTxtBoxes
 }
-
 function getTxtBox() {
     return gTxtBoxes.find(txtBox => txtBox.textBoxId === gCurrSelectedTextId)
 }
@@ -28,13 +26,12 @@ function getCurrSelectedTextBoxId() {
     return gCurrSelectedTextId
 }
 
+
 // SET //
 function setCanvasSize(width, height) {
     gCanvas.width = width
     gCanvas.height = height
-
-    console.log('gCanvas.width', gCanvas.width)
-    console.log('gCanvas.height', gCanvas.height)
+    console.log('gCanvas', gCanvas)
 }
 function setTxtBoxContent(content) {
     gTxtBoxes[_getTxtBoxIdx()].content = content
@@ -54,21 +51,17 @@ function increaseFont() {
     const currIdx = _getTxtBoxIdx()
     gTxtBoxes[currIdx].fontSize += 2
 }
-
 function setCurrSelectedTextBoxId(id) {
     gCurrSelectedTextId = id
 }
-
 function setStrokeColor(color) {
     const currIdx = _getTxtBoxIdx()
     gTxtBoxes[currIdx].textStrokeColor = color
 }
-
 function setFillColor(color) {
     const currIdx = _getTxtBoxIdx()
     gTxtBoxes[currIdx].textFillColor = color
 }
-
 function setNextFocusTextBox() {
     gCurrSelectedTextId++
     if (_getTxtBoxIdx() < 0) gCurrSelectedTextId = 1
@@ -91,10 +84,6 @@ function resetEditor() {
     gTxtBoxes.splice(0, gTxtBoxes.length)
     gCurrTextAlign = 'center'
     gCurrSelectedTextId = 1
-
-    // const newCanvas = _createCanvas()
-    // gCanvas.width = newCanvas.width
-    // gCanvas.height = newCanvas.height
 }
 
 
@@ -132,7 +121,6 @@ function _getTxtYposById(textBoxId) {
     else if (textBoxId === 2) return gCanvas.height * 0.8
     else return gCanvas.height * 0.4
 }
-
 
 function _getTxtBoxIdx() {
     return gTxtBoxes.findIndex(txtBox => txtBox.textBoxId === gCurrSelectedTextId)

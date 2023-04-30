@@ -1,6 +1,6 @@
 .meme-card {
-    border: 1px solid black;
-    background-color: black;
+    border: 1px solid var(--clr0);
+    background-color: var(--clr0);
     position: relative;
 }
 

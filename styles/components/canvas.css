@@ -5,33 +5,16 @@ canvas {
 
 .canvas-container {
     border: 1px solid var(--clr0);
-    align-self: center;
-    /* position: relative; */
-}
-
-.txtBoxFocus {
-    /* position: absolute; */
-    /* top: 0; */
+    place-self: center center;
 }
 
 .meme-editor-tool-container {
     height: 100%;
     column-gap: 50px;
-    /* padding-inline: 50px; */
-    /* display: grid; */
-    /* grid-template-columns: max-content auto; */
-
-
-    /* grid-template-columns: minmax(max-content,1fr) minmax(250px,1fr); */
-    /* grid-template-columns: minmax(300px,1fr) minmax(250px,1fr); */
-
 
     align-content: center;
     justify-content: space-evenly;
 }
-
-
-
 
 .page-meme-editor {
     height: 100%;
@@ -61,10 +44,6 @@ canvas {
 .btn-download {
     font-size: 40px;
 }
-
-/* input{
-    display: block;
-} */
 
 .meme-editor-tool button img {
     height: 40px;

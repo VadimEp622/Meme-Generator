@@ -7,13 +7,12 @@
     --padding-side: 50px;
 
 
-
     /* Color Palette */
     --clr-2: rgb(232, 151, 0);
     --clr-1: orange;
-    --clr0: black;
+    --clr0: rgb(24, 24, 24);
     --clr1: white;
     --clr2: rgb(222, 222, 222);
     --clr3: rgb(194, 193, 193);
-
+    --clr4: gray;
 }
