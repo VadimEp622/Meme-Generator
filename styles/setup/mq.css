@@ -12,11 +12,12 @@
     }
 
     .header-container .navigate span>* {
-        padding: 0;
+        display: block;
+        padding-block: 25px;
+        text-align: center;
     }
 
     .header-container .navigate span {
-        padding: 25px;
         background-color: var(--clr-1);
     }
 
@@ -54,6 +55,13 @@
         display: grid;
         padding-inline: 50px;
         grid-template-columns: minmax(300px, 1fr) minmax(250px, 1fr);
+    }
+
+    header .navigate span>* {
+        padding-block: calc((var(--header-height) - var(--font-size) - 2px) / 2)
+    }
+    header .navigate>*:not(:last-child) {
+        padding-inline-end: calc(var(--padding-side) * 2);
     }
 
     .header-container .menu-button {

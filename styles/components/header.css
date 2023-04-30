@@ -7,13 +7,7 @@ header {
     height: var(--header-height);
 }
 
-header .navigate span>* {
-    padding-block: calc((var(--header-height) - var(--font-size) - 2px) / 2)
-}
 
-header .navigate>*:not(:last-child) {
-    padding-inline-end: calc(var(--padding-side) * 2);
-}
 
 header a:hover {
     background-color: var(--clr-2);
