@@ -19,9 +19,6 @@
 /* Font Awesome */
 @font-face {
     font-family: fa;
-    /* src: url(fonts/fontawesome/fa-brands-400.ttf); */
-
-    /* try below, if above does not work in github */
     src: url('../../fonts/fontawesome/fa-brands-400.ttf');
 }
 

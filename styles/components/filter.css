@@ -17,3 +17,11 @@
 .filter-tools a:hover {
     background-color: var(--clr4);
 }
+
+.filter-tools .disabled{
+    display: none;
+}
+
+.filter-tools .btn-editor img{
+    height: 10px;
+}

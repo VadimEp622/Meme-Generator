@@ -43,26 +43,14 @@
             <section class="filter-tools flex">
                 <label for="search">Search:</label>
                 <input id="search" type="search" disabled>
+                <button class="btn-editor" disabled><img src="imgs/ICONS/search-icon.png"></button>
                 <nav class="filter-tags flex align-center">
-                    <span><a href="#">demo tag 1</a></span>
-                    <span><a href="#">demo tag 2</a></span>
+                    <span><a href="#" class="disabled">demo tag 1</a></span>
+                    <span><a href="#" class="disabled">demo tag 2</a></span>
                 </nav>
             </section>
             <!-- CARDS -->
-            <section class="meme-gallery card-layout">
-                <!-- <article class="meme-card" onmousedown="onMemeClick(this.id)">
-                    <section class="image-container">
-                        <img src="imgs/meme-imgs (various aspect ratios)/003.jpg">
-                        <section class="modal">random tags</section>
-                    </section>
-                </article>
-                <article class="meme-card">
-                    <section class="image-container">
-                        <img src="imgs/meme-imgs (various aspect ratios)/Oprah-You-Get-A.jpg">
-                        <section class="modal">random tags</section>
-                    </section>
-                </article> -->
-            </section>
+            <section class="meme-gallery card-layout"></section>
         </section>
 
         <!-- PAGE-MEME-EDITOR -->
@@ -106,7 +94,6 @@
 
                     <article>
                         <label></label>
-                        <!-- <button class="btn-editor" disabled><img src="imgs/ICONS/search-icon.png"></button> -->
                         <button class="btn-editor" onmousedown="onResetCanvasImg()"><img
                                 src="imgs/ICONS/trash.png"></button>
                         <button class="btn-editor" onmousedown="onSetNextFocusTextBox()">
@@ -137,7 +124,7 @@
         </section>
 
         <!-- PAGE-ABOUT -->
-        <section class="page-about flex column space-evenly align-center" hidden>
+        <section class="page-about" hidden>
             <!-- <section> About here</section> -->
 
             <!-- <section>
@@ -148,13 +135,14 @@
                 Thank you for visiting.
             </section> -->
 
-            <span>Good day.</span>
-            <span>My name is Vlad Epov,</span>
-            <span>and this is the fruit of my work, after tackling the challenge to build a demo website of a "Meme
-                Generator",</span>
-            <span>for the 2nd "exam sprint" of Coding Academy (March 2023!!)</span>
-            <span>Thank you for visiting.</span>
-
+            <section class="flex column space-evenly align-center">
+                <span>Good day.</span><br>
+                <span>My name is Vlad Epov,</span><br>
+                <span>and this is the fruit of my work, after tackling the challenge to build a demo website of a "Meme
+                    Generator",</span><br>
+                <span>for the 2nd "exam sprint" of Coding Academy (March 2023!!)</span><br>
+                <span>Thank you for visiting.</span><br>
+            </section>
 
         </section>
 
