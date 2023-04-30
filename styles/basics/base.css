@@ -12,6 +12,9 @@ body {
     min-height: 100vh;
     background-color: var(--clr2);
 }
+img{
+    display: block;
+}
 
 a {
     text-decoration: none;
