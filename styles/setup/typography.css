@@ -1,19 +1,19 @@
 /* Playfair */
 @font-face {
     font-family: playfair;
-    src: url(/fonts/playfair/PlayfairDisplay-Regular.ttf);
+    src: url(../../fonts/playfair/PlayfairDisplay-Regular.ttf);
 } 
 
 /* Ubuntu */
 @font-face {
     font-family: ubuntu;
-    src: url(/fonts/ubuntu/Ubuntu-Light.ttf);
+    src: url(../../fonts/ubuntu/Ubuntu-Light.ttf);
 }
 
 /* Inconsolata */
 @font-face {
     font-family: inconsolata;
-    src: url(/fonts/inconsolata/Inconsolata-Regular.ttf);
+    src: url(../../fonts/inconsolata/Inconsolata-Regular.ttf);
 }
 
 /* Font Awesome */
@@ -22,6 +22,6 @@
     /* src: url(fonts/fontawesome/fa-brands-400.ttf); */
 
     /* try below, if above does not work in github */
-    src: url(../fonts/fontawesome/fa-brands-400.ttf);
+    src: url(../../fonts/fontawesome/fa-brands-400.ttf);
 }
 
