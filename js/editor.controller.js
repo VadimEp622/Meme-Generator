@@ -113,7 +113,7 @@ console.log('txtBox', txtBox)
     const pos = {
         x: 2,
         y: textYpos - 5,
-        xEnd: parseInt(gElCanvas.width),
+        xEnd: parseInt(gElCanvas.width) - 2,
         yEnd: textYpos + fontSize,
     }
 
