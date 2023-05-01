@@ -109,7 +109,7 @@ function drawFocusRect() {
     const txtBox = getTxtBox()
     const { textXpos, textYpos, fontSize } = txtBox
     const contentLen = txtBox.content.length
-
+console.log('txtBox', txtBox)
     const pos = {
         x: 2,
         y: textYpos - 5,
@@ -139,18 +139,18 @@ function drawAllTxt() {
 }
 
 
-function loadNewImgElement(imageId, onImageReady) {
+function loadNewImgElement(imageId, onImageRdy) {
     const imgFileName = getMemeById(imageId).fileName
     let img = new Image()
     img.src = `imgs/meme-imgs/${imgFileName}`
-    img.onload = () => onImageReady(img)
-    gImg = img
+    img.onload = () => onImageRdy(img)
 }
 
 function renderLoadedImg(img) {
     gElCanvas.width = img.naturalWidth
     gElCanvas.height = img.naturalHeight
     setCanvasSize(img.naturalWidth, img.naturalHeight)
+    console.log('getCanvas()', getCanvas())
 
     const elContainer = document.querySelector('.canvas-container')
     elContainer.style.maxWidth = `${gElCanvas.width}px`
@@ -183,12 +183,33 @@ function drawText(txtBox) {
 }
 
 
-function downloadImg(elLink) {
+function onDownloadImg(elLink) {
     drawAllTxt()
     const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
     elLink.href = imgContent
 }
 
+function onUploadImg(ev) {
+    gCtx.reset()
+    resetMemeEditor()
+    loadImageFromInput(ev, renderLoadedImg)
+}
+
+// CallBack func will run on success load of the img
+function loadImageFromInput(ev, onImageReady) {
+    console.log('ev', ev)
+    const reader = new FileReader()
+    // After we read the file
+    reader.onload = function (ev) {
+        let img = new Image() // Create a new html img element
+        img.src = ev.target.result // Set the img src to the img file we read
+        // Run the callBack func, To render the img on the canvas
+        img.onload = onImageReady.bind(null, img)
+        // Can also do it this way:
+        // img.onload = () => onImageReady(img)
+    }
+    reader.readAsDataURL(ev.target.files[0]) // Read the file we picked
+}
 
 function resetMemeEditor() {
     resetEditor()

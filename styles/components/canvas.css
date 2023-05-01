@@ -41,8 +41,21 @@ canvas {
     background-color: var(--clr2);
 }
 
-.btn-download {
+.btn-download,.btn-upload {
     font-size: 40px;
+    position: relative;
+}
+
+.btn-upload input{
+    position: absolute;
+    /* height: 40px; */
+    width: 40px;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    border-radius: 25%;
+    width: 50px;
+    opacity: 0;
 }
 
 .meme-editor-tool button img {

@@ -8,7 +8,7 @@
     <title>Meme Generator</title>
     <script src="https://kit.fontawesome.com/65fb59720d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="/imgs/logo/logo-first-letter.png">
 </head>
 
 <!-- TODO: variable-ise constant values and color palettes -->
@@ -113,8 +113,13 @@
 
                     <article class="download-container">
                         <label></label>
-                        <a class="" href="#" onmousedown="downloadImg(this)" download="my-img.jpg">
+                        <a class="" href="#" onmousedown="onDownloadImg(this)" download="my-img.jpg">
                             <i class="btn-editor btn-download fa-solid fa-download"></i>
+                        </a>
+                        <a href="#">
+                            <i class="btn-editor btn-upload fa-solid fa-upload">
+                                <input type="file" class="img-upload" name="image" onchange="onUploadImg(event)"/>
+                            </i>
                         </a>
                     </article>
                 </section>
